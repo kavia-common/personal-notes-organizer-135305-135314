@@ -3,16 +3,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:notes_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('App builds and shows list page', (WidgetTester tester) async {
+    await tester.pumpWidget(const NotesApp());
+    await tester.pumpAndSettle();
 
-    expect(find.text('notes_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.text('Ocean Notes'), findsOneWidget);
+    expect(find.byType(FloatingActionButton), findsOneWidget);
   });
 
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Create note flow opens editor', (WidgetTester tester) async {
+    await tester.pumpWidget(const NotesApp());
+    await tester.pumpAndSettle();
 
-    expect(find.text('notes_frontend'), findsOneWidget);
+    await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
+
+    expect(find.text('New note'), findsOneWidget);
+    expect(find.text('Save'), findsOneWidget);
   });
 }

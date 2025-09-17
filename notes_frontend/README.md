@@ -1,16 +1,27 @@
-# notes_frontend
+# Ocean Notes (notes_frontend)
 
-A new Flutter project.
+A modern, minimalist Flutter app to create, edit, and organize personal notes.
+Built with the "Ocean Professional" theme featuring blue primary and amber accents,
+rounded corners, subtle shadows, and smooth transitions.
 
-## Getting Started
+## Features
+- Create, edit, pin, and delete notes
+- Local persistence using SQLite (sqflite)
+- Provider-based state management
+- Search notes by title/content
+- Ocean Professional theme
 
-This project is a starting point for a Flutter application.
+## Run
+- flutter pub get
+- flutter run
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project Structure
+- lib/
+  - main.dart: App root, routing, and theming
+  - src/
+    - data/: Database and repository
+    - models/: Data models
+    - state/: Provider state
+    - theme/: Theme configuration
+    - ui/pages/: List, detail, and edit pages
+    - ui/widgets/: Reusable UI elements
